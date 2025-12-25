@@ -1,0 +1,46 @@
+// @keyframes bg-pan {
+//   0% {
+//     background-position: 0% 25%;
+//   }
+//   25% {
+//     background-position: 25% 30%;
+//   }
+//   50% {
+//     background-position: 100% 50%;
+//   }
+//   100% {
+//     background-position: 50% 0%;
+//   }
+// }
+
+.bg-background {
+  // Use a subtle repeating pattern or gradient that can be animated
+  background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='25' height='25' patternTransform='scale(4) rotate(170)'><rect x='0' y='0' width='100%' height='100%' fill='%230095c708'/><path d='M 10,-2.55e-7 V 20 Z M -1.1677362e-8,10 H 20 Z' transform='translate(2.5,0)' stroke-width='1' stroke='%233f51b508' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(-84,-80)' fill='url(%23a)'/></svg>");
+  background-repeat: repeat;
+  background-size: 200% 200%; // Make consistent size for scrolling
+
+  // Apply the pan animation on hover or continuously?
+  // User asked for "animation in background image... when mouse over".
+  // Let's stick to the zoom-pulse on hover for the card, and maybe pan the background on hover too?
+  // Or just pan continuously. Let's try adding pan to the hover state.
+
+  transition: background-position 0.5s ease;
+
+  &:hover {
+    animation: bg-pan 200s ease-in-out infinite;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}

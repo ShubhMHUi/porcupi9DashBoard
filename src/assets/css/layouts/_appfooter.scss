@@ -1,0 +1,20 @@
+@use '../abstracts/variables' as var;
+@use '../base/typography' as typo;
+@use '../base/spacing' as spc;
+
+.footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  // background: var.color('800');
+  padding: spc.space('8') spc.space('10');
+
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  &-text {
+    color: light-dark(var.color('700'), var.color('300'));
+    padding-bottom: spc.space('2');
+    border-bottom: 1px solid light-dark(var.color('300'), var.color('700'));
+  }
+}
