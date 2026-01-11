@@ -1,23 +1,30 @@
 <template>
-  <aside class="aside transition-all duration-300" :class="props.collapsed ? 'w-22' : 'w-72'">
+  <aside
+    class="aside transition-all duration-300"
+    :class="appStore.isSidebarCollapsed ? 'w-22' : 'w-72'"
+  >
     <div class="flex items-center justify-center mb-8">
       <UButton
         variant="solid"
         class="rounded-full p-3"
         color="primary"
         size="xl"
-        :icon="props.collapsed ? 'i-lucide-chevron-right' : 'i-lucide-chevron-left'"
-        @click="emit('toggle')"
+        :icon="appStore.isSidebarCollapsed ? 'i-lucide-chevron-right' : 'i-lucide-chevron-left'"
+        @click="appStore.toggleSidebar()"
       />
+      <!-- :avatar="{
+          src: porcupineIcon,
+          size: 'xl',
+        }" -->
     </div>
     <nav class="flex flex-col justify-center gap-6">
       <div class="sidebar-userlogin flex flex-col items-center gap-3">
-        <picture class="border border-2 border-dashed border-teal-800 rounded-full">
+        <picture class="border border-2 border-dashed border-teal-200 rounded-full">
           <img
-            src="https://avatar.iran.liara.run/public/5"
-            alt=""
+            :src="userStore.profile.avatar || 'https://avatar.iran.liara.run/public/5'"
+            alt="User Avatar"
             class="transition-all duration-300"
-            :class="props.collapsed ? 'w-13 h-13' : 'w-26 h-26'"
+            :class="appStore.isSidebarCollapsed ? 'w-13 h-13' : 'w-26 h-26'"
           />
         </picture>
         <!-- <h6
@@ -27,36 +34,19 @@
           John Doe
         </h6> -->
       </div>
-      <!-- Dashboard -->
       <div
-        class="menu-item flex items-center gap-3 hover:bg-teal-800 transition-all duration-300 rounded-4xl cursor-pointer p-4"
-        :class="{
-          'active-aside': $route.path === '/',
-        }"
-        @click="navigateTo('/')"
+        v-for="item in appStore.menuItems"
+        :key="item.path"
+        class="menu-item flex items-center gap-3 transition-all duration-300 rounded-4xl cursor-pointer p-4 group"
+        :class="[
+          $route.path === item.path
+            ? 'active-aside'
+            : 'hover:bg-teal-400 text-teal-50 hover:text-white',
+        ]"
+        @click="navigateTo(item.path)"
       >
-        <UIcon color="teal-500" name="i-lucide-home" class="w-6 h-6" />
-        <p v-if="!props.collapsed" class="text-md font-medium">Dashboard</p>
-      </div>
-
-      <!-- Users -->
-      <div
-        class="menu-item flex items-center gap-3 transition-all duration-300 rounded-4xl cursor-pointer p-4"
-        :class="{ 'active-aside': $route.path === '/users' }"
-        @click="navigateTo('/users')"
-      >
-        <UIcon color="teal-500" fill="teal-500" name="i-lucide-users" class="w-6 h-6" />
-        <p v-if="!props.collapsed" class="text-md font-medium">Users</p>
-      </div>
-
-      <!-- Settings -->
-      <div
-        class="menu-item flex items-center gap-3 hover:bg-teal-800 transition-all duration-300 rounded-4xl cursor-pointer p-4"
-        :class="{ 'active-aside': $route.path === '/settings' }"
-        @click="navigateTo('/settings')"
-      >
-        <UIcon color="teal-500" fill="teal-500" name="i-lucide-settings" class="w-6 h-6" />
-        <p v-if="!props.collapsed" class="text-md font-medium">Settings</p>
+        <UIcon :name="item.icon" class="w-6 h-6 transition-colors duration-300" />
+        <p v-if="!appStore.isSidebarCollapsed" class="text-md font-medium">{{ item.label }}</p>
       </div>
     </nav>
   </aside>
@@ -64,21 +54,17 @@
 
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
+import { useAppStore } from '@/stores/app'
+import { useUserStore } from '@/stores/user'
 
-const props = defineProps({
-  collapsed: {
-    type: Boolean,
-    default: false,
-  },
-})
-
-const emit = defineEmits(['expand', 'toggle'])
+const appStore = useAppStore()
+const userStore = useUserStore()
 const router = useRouter()
 
 const navigateTo = (path: string) => {
   router.push(path)
-  if (props.collapsed) {
-    emit('expand')
+  if (appStore.isSidebarCollapsed) {
+    appStore.setSidebarCollapsed(false)
   }
 }
 </script>

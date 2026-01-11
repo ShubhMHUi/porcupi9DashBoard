@@ -3,19 +3,17 @@
 @use '../base/spacing' as spc;
 
 .aside {
-  background: light-dark(var.color('400'), var.color('800'));
+  background: light-dark(var.color('500'), var.color('800'));
   color: light-dark(var.color('900'), var.color('100'));
   padding: spc.space('8') spc.space('4');
   border-radius: 3rem;
 
-  // position: fixed;
-  // height: calc(100vh - 2rem);
-
   .active-aside {
-    background: light-dark(var.color('600'), var.color('900'));
-    color: light-dark(var.color('50'), var.color('100'));
+    background: light-dark(var.color('300'), var.color('900'));
+    color: light-dark(var.color('800'), var.color('100'));
     &:hover {
       background: light-dark(var.color('700'), var.color('600'));
+      color: light-dark(var.color('50'), var.color('100'));
     }
   }
 }

@@ -25,6 +25,8 @@ declare module 'vue' {
     UCard: typeof import('./node_modules/.pnpm/@nuxt+ui@4.3.0_@babel+parse_9a7706bbf8a67a23d140b48585a9f37c/node_modules/@nuxt/ui/dist/runtime/components/Card.vue')['default']
     UColorModeButton: typeof import('./node_modules/.pnpm/@nuxt+ui@4.3.0_@babel+parse_9a7706bbf8a67a23d140b48585a9f37c/node_modules/@nuxt/ui/dist/runtime/components/color-mode/ColorModeButton.vue')['default']
     UIcon: typeof import('./node_modules/.pnpm/@nuxt+ui@4.3.0_@babel+parse_9a7706bbf8a67a23d140b48585a9f37c/node_modules/@nuxt/ui/dist/runtime/vue/components/Icon.vue')['default']
+    UInput: typeof import('./node_modules/.pnpm/@nuxt+ui@4.3.0_@babel+parse_9a7706bbf8a67a23d140b48585a9f37c/node_modules/@nuxt/ui/dist/runtime/components/Input.vue')['default']
+    USelect: typeof import('./node_modules/.pnpm/@nuxt+ui@4.3.0_@babel+parse_9a7706bbf8a67a23d140b48585a9f37c/node_modules/@nuxt/ui/dist/runtime/components/Select.vue')['default']
     UTable: typeof import('./node_modules/.pnpm/@nuxt+ui@4.3.0_@babel+parse_9a7706bbf8a67a23d140b48585a9f37c/node_modules/@nuxt/ui/dist/runtime/components/Table.vue')['default']
     UTooltip: typeof import('./node_modules/.pnpm/@nuxt+ui@4.3.0_@babel+parse_9a7706bbf8a67a23d140b48585a9f37c/node_modules/@nuxt/ui/dist/runtime/components/Tooltip.vue')['default']
   }

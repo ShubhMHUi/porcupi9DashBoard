@@ -1,0 +1,46 @@
+@use '../abstracts/variables' as v;
+
+// .glow-shadow {
+//   position: relative;
+//   z-index: -1;
+//   background-color: rgba(0, 0, 0, 0.6);
+
+//   &:before {
+//     content: '';
+//     z-index: -2;
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     bottom: 0;
+//     left: 0;
+//     background: linear-gradient(1deg, #60efff 0%, #00ff87 100%);
+//     transform: translate3d(-1px, 20px, 0) scale(0.96);
+//     filter: blur(20px);
+//     opacity: 0.5;
+//     transition: opacity 0.3s;
+//     border-radius: inherit;
+//   }
+
+//   &:after {
+//     content: '';
+//     z-index: -1;
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     bottom: 0;
+//     left: 0;
+//     background: inherit;
+//     border-radius: inherit;
+//   }
+// }
+
+.hover-box-shadow {
+  transition: box-shadow 0.3s ease-in-out;
+
+  &:hover {
+    $shadow-color: v.color('500');
+    box-shadow:
+      0 10px 15px -5px color-mix(in srgb, #{$shadow-color}, transparent 80%),
+      0 4px 6px 8px color-mix(in srgb, #{$shadow-color}, transparent 90%);
+  }
+}
