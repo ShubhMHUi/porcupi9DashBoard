@@ -21,7 +21,7 @@
       <div class="sidebar-userlogin flex flex-col items-center gap-3">
         <picture class="border border-2 border-dashed border-teal-200 rounded-full">
           <img
-            :src="userStore.profile.avatar || 'https://avatar.iran.liara.run/public/5'"
+            :src="userStore.profile.avatar || '../assets/img/avatar.png'"
             alt="User Avatar"
             class="transition-all duration-300"
             :class="appStore.isSidebarCollapsed ? 'w-13 h-13' : 'w-26 h-26'"

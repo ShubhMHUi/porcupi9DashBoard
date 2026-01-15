@@ -4,7 +4,7 @@ import { ref } from 'vue'
 export interface ApiKey {
   id: string
   label: string
-  status: 'Active' | 'Inactive' | 'Pending' | 'Revoked'
+  status: 'Active' | 'Inactive' | 'Revoked'
   key: string
   createdDate: string
   durationRemaining: number // in days
@@ -20,7 +20,7 @@ export const useApiKeyStore = defineStore('apiKey', () => {
       key: '123456789',
       createdDate: 'Sun Jan 15, 2025',
       durationRemaining: 27,
-      gradient: 'gradient-teal-purple',
+      gradient: 'from-teal-400/30 to-purple-500/30',
     },
     {
       id: '2',
@@ -29,7 +29,7 @@ export const useApiKeyStore = defineStore('apiKey', () => {
       key: '987654321',
       createdDate: 'Mon Feb 20, 2025',
       durationRemaining: 15,
-      gradient: 'gradient-blue-cyan',
+      gradient: 'from-blue-400/30 to-cyan-500/30',
     },
     {
       id: '3',
@@ -38,7 +38,7 @@ export const useApiKeyStore = defineStore('apiKey', () => {
       key: 'DEV-KEY-001',
       createdDate: 'Fri Mar 10, 2025',
       durationRemaining: 0,
-      gradient: 'gradient-orange-red',
+      gradient: 'from-orange-400/30 to-red-500/30',
     },
     {
       id: '4',
@@ -47,16 +47,16 @@ export const useApiKeyStore = defineStore('apiKey', () => {
       key: '123456789',
       createdDate: 'Sun Jan 15, 2025',
       durationRemaining: 27,
-      gradient: 'gradient-teal-purple',
+      gradient: 'from-teal-400/30 to-purple-500/30',
     },
     {
       id: '5',
       label: 'API Key No. 5',
-      status: 'Pending',
+      status: 'Active',
       key: '987654321',
       createdDate: 'Mon Feb 20, 2025',
       durationRemaining: 15,
-      gradient: 'gradient-blue-cyan',
+      gradient: 'from-blue-400/30 to-cyan-500/30',
     },
     {
       id: '6',
@@ -65,7 +65,7 @@ export const useApiKeyStore = defineStore('apiKey', () => {
       key: 'DEV-KEY-001',
       createdDate: 'Fri Mar 10, 2025',
       durationRemaining: 0,
-      gradient: 'gradient-orange-red',
+      gradient: 'from-orange-400/30 to-red-500/30',
     },
   ])
 

@@ -1,10 +1,7 @@
 <template>
   <div class="container flex flex-col gap-12">
     <div class="flex items-stretch gap-6">
-      <UCard
-        variant="subtle"
-        class="flex-1 bg-background bg-linear-to-r glow-shadow hover-box-shadow from-teal-50/75 to-teal-100/75 rounded-2xl transition-transform duration-500"
-      >
+      <UCard variant="subtle" class="flex-1 glow-shadow">
         <template #header>
           <div class="flex items-center justify-between p-3">
             <div class="flex flex-col gap-4">

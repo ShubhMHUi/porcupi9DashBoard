@@ -1,12 +1,10 @@
 <template>
   <div class="flex flex-col gap-8">
     <!-- Header -->
-    <div class="flex flex-col gap-2">
-      <h1 class="text-3xl font-bold text-teal-800 dark:text-teal-50">Profile Settings</h1>
-      <p class="text-gray-500 dark:text-gray-400">
-        Manage your personal information and subscription plan.
-      </p>
-    </div>
+    <PageHeader
+      title="Profile Settings"
+      description="Manage your personal information and subscription plan."
+    />
 
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
       <!-- Personal Details Section -->
@@ -44,7 +42,7 @@
                   class="absolute -inset-1 bg-linear-to-r from-teal-400 to-emerald-400 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"
                 ></div>
                 <img
-                  src="https://avatar.iran.liara.r un/public/5"
+                  src="../assets/img/avatar.png"
                   alt="Profile Picture"
                   class="relative w-32 h-32 rounded-full border-4 border-white dark:border-gray-800 object-cover shadow-lg"
                 />
@@ -207,6 +205,7 @@
 <script setup lang="ts">
 import { ref, reactive } from 'vue'
 import { useUserStore } from '@/stores/user'
+import PageHeader from '@/components/common/PageHeader.vue'
 
 const userStore = useUserStore()
 const isEditing = ref(false)

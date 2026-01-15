@@ -11,7 +11,7 @@ export const useUserStore = defineStore('user', () => {
     city: 'New York',
     country: 'United States',
     createdDate: '2023-01-10',
-    avatar: 'https://avatar.iran.liara.run/public/5',
+    avatar: 'src/assets/img/avatar.png',
   })
 
   const subscription = ref({
