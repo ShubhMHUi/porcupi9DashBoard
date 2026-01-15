@@ -17,6 +17,7 @@ declare module 'vue' {
     AppSideBar: typeof import('./src/components/layouts/AppSideBar.vue')['default']
     BadgeTier: typeof import('./src/components/misc/BadgeTier.vue')['default']
     CreditUsageChart: typeof import('./src/components/dashboard/CreditUsageChart.vue')['default']
+    PageHeader: typeof import('./src/components/common/PageHeader.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     UApp: typeof import('./node_modules/.pnpm/@nuxt+ui@4.3.0_@babel+parse_9a7706bbf8a67a23d140b48585a9f37c/node_modules/@nuxt/ui/dist/runtime/components/App.vue')['default']

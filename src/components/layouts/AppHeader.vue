@@ -2,7 +2,7 @@
   <header class="header">
     <div class="flex items-center justify-between border-b border-teal-800 pb-4">
       <picture class="border border-teal-800 rounded-full w-12 h-12">
-        <img src="@/assets/img/porcupine_Icon.png" class="w-full h-full" alt="" />
+        <img src="@/assets/img/light-theme.png" class="w-full h-full" alt="" />
       </picture>
       <div class="flex items-center justify-end gap-4">
         <UTooltip text="Notifications" arrow :delay-duration="0">

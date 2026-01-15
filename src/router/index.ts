@@ -3,6 +3,7 @@ import Setting from '@/views/UsersSetting.vue'
 import Details from '@/views/UsersDetails.vue'
 import TransactionHistory from '@/views/TransactionHistory.vue'
 import ProfilePage from '@/views/ProfilePage.vue'
+import ApiAccessKey from '@/views/ApiAccessKey.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
@@ -27,6 +28,11 @@ const router = createRouter({
       path: '/transactions',
       name: 'transactions',
       component: TransactionHistory,
+    },
+    {
+      path: '/api-access-key',
+      name: 'api-access-key',
+      component: ApiAccessKey,
     },
     {
       path: '/profile',

@@ -1,9 +1,13 @@
 <template>
   <div class="flex flex-col gap-6">
-    <div class="flex flex-col gap-2">
-      <h1 class="text-3xl font-bold text-teal-800 dark:text-teal-50">Transaction History</h1>
-      <p class="text-gray-500 dark:text-gray-400">View and manage your transaction history.</p>
-    </div>
+    <PageHeader>
+      <template #title>
+        <h1 class="text-3xl font-bold text-teal-800 dark:text-teal-50">Transaction History</h1>
+      </template>
+      <template #description>
+        <p class="text-gray-500 dark:text-gray-400">View and manage your transaction history.</p>
+      </template>
+    </PageHeader>
     <UCard
       variant="subtle"
       class="rounded-2xl glow-shadow hover-box-shadow bg-background/50 backdrop-blur-md"
@@ -72,6 +76,7 @@
 import { ref, computed, h, resolveComponent } from 'vue'
 import type { TableColumn } from '@nuxt/ui'
 import { useTransactionStore } from '@/stores/transaction'
+import PageHeader from '@/components/common/PageHeader.vue'
 
 const UBadge = resolveComponent('UBadge')
 const UIcon = resolveComponent('UIcon')

@@ -7,6 +7,7 @@ export const useAppStore = defineStore('app', () => {
   const menuItems = ref([
     { label: 'Dashboard', icon: 'i-lucide-home', path: '/' },
     { label: 'Transactions', icon: 'i-lucide-receipt', path: '/transactions' },
+    { label: 'API Access Key', icon: 'i-lucide-key', path: '/api-access-key' },
     { label: 'Profile', icon: 'i-lucide-user', path: '/profile' },
     { label: 'Settings', icon: 'i-lucide-settings', path: '/settings' },
   ])

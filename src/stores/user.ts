@@ -15,7 +15,7 @@ export const useUserStore = defineStore('user', () => {
   })
 
   const subscription = ref({
-    plan: 'Basic', // 'Basic', 'Plus', 'Pro', 'Pro Plus'
+    plan: 'Plus', // 'Basic', 'Plus', 'Pro', 'Pro Plus'
     expiryDate: '2025-12-31',
     key: '1234567890',
   })
