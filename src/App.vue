@@ -1,11 +1,19 @@
 <script setup lang="ts">
 // import { ref } from 'vue'
 import { RouterView } from 'vue-router'
+import { onMounted } from 'vue'
+import { useAppStore } from '@/stores/app'
 import AppHeader from './components/layouts/AppHeader.vue'
 import AppFooter from './components/layouts/AppFooter.vue'
 import AppSideBar from './components/layouts/AppSideBar.vue'
 
-// const isCollapsed = ref(false)
+const appStore = useAppStore()
+
+onMounted(() => {
+  if (window.innerWidth < 1024) {
+    appStore.setSidebarCollapsed(true)
+  }
+})
 </script>
 
 <template>

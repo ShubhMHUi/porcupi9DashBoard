@@ -4,6 +4,7 @@ import Details from '@/views/UsersDetails.vue'
 import TransactionHistory from '@/views/TransactionHistory.vue'
 import ProfilePage from '@/views/ProfilePage.vue'
 import ApiAccessKey from '@/views/ApiAccessKey.vue'
+import UpgradePlan from '@/views/UpgradePlan.vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
@@ -38,6 +39,11 @@ const router = createRouter({
       path: '/profile',
       name: 'profile',
       component: ProfilePage,
+    },
+    {
+      path: '/upgrade-plan',
+      name: 'upgrade-plan',
+      component: UpgradePlan,
     },
   ],
 })

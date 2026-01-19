@@ -52,7 +52,7 @@ const tierConfig = computed(() => {
   >
     <!-- Glow -->
     <div
-      class="absolute inset-0 rounded-xl [clip-path:polygon(30%_0%,70%_0%,100%_30%,100%_70%,70%_100%,30%_100%,0%_70%,0%_30%)] bg-white/20 blur-xl animate-[pulse_4s_ease-in-out_infinite]"
+      class="absolute inset-0 rounded-xl [clip-path:polygon(30%_0%,70%_0%,100%_30%,100%_70%,70%_100%,30%_100%,0%_70%,0%_30%)] bg-white/20 blur-xl animate-[pulse_4s_ease-in-out_infinite] pointer-events-none"
     ></div>
 
     <!-- Octagon -->

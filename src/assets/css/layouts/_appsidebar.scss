@@ -11,9 +11,12 @@
   .active-aside {
     background: light-dark(var.color('300'), var.color('900'));
     color: light-dark(var.color('800'), var.color('100'));
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.125);
+    transition: all 0.3s ease-in-out;
     &:hover {
       background: light-dark(var.color('700'), var.color('600'));
       color: light-dark(var.color('50'), var.color('100'));
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.125);
     }
   }
 }

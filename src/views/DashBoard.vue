@@ -1,7 +1,7 @@
 <template>
   <div class="container flex flex-col gap-12">
     <div class="flex items-stretch gap-6">
-      <UCard variant="subtle" class="flex-1 glow-shadow">
+      <UCard variant="subtle" class="flex-1 glow-shadow relative overflow-hidden group z-10">
         <template #header>
           <div class="flex items-center justify-between p-3">
             <div class="flex flex-col gap-4">
@@ -23,21 +23,30 @@
                   icon="i-lucide-circle-fading-arrow-up"
                   color="primary"
                   variant="solid"
+                  @click="$router.push('/upgrade-plan')"
                   >Upgrade</UButton
                 >
               </div>
             </div>
+            <div
+              class="absolute -z-10 -bottom-24 -right-24 w-64 h-64 rounded-full bg-linear-to-br blur-3xl pointer-events-none transition-all duration-700 ease-in-out group-hover:scale-125 group-hover:rotate-12 group-hover:opacity-70 from-blue-500/30 to-purple-500/30"
+            ></div>
+            <div
+              class="absolute -z-10 -bottom-10 -right-10 w-48 h-48 rounded-full bg-white/5 backdrop-blur-md border border-white/5 pointer-events-none transition-all duration-700 ease-in-out group-hover:scale-110 group-hover:-rotate-12"
+            ></div>
           </div>
         </template>
-        <template #default></template>
       </UCard>
 
       <!-- Credit Usage Chart Card -->
     </div>
 
-    <div class="flex gap-12">
-      <div class="basis-2/3">
-        <UCard variant="subtle" class="rounded-2xl h-full glow-shadow hover-box-shadow">
+    <div class="flex gap-8 flex-wrap">
+      <div class="flex-grow basis-full md:basis-0">
+        <UCard
+          variant="subtle"
+          class="rounded-2xl h-full glow-shadow hover-box-shadow relative overflow-hidden group"
+        >
           <template #header>
             <div class="flex items-center gap-2">
               <!-- <UIcon name="i-lucide-key" class="w-6 h-6 text-teal-800" /> -->
@@ -49,7 +58,7 @@
           <template #default>
             <div class="flex items-center justify-between py-12">
               <p
-                class="text-2xl text-center font-semibold tracking-[1em] px-8 py-4 border border-dashed rounded-xl bg-teal-50 dark:bg-teal-500 text-teal-800 dark:text-teal-50"
+                class="text-2xl text-center font-semibold tracking-[1em] px-8 py-4 border border-dashed rounded-xl bg-teal-200/10 dark:bg-teal-500/10 text-teal-800 dark:text-teal-50"
               >
                 {{ userStore.subscription.key }}
               </p>
@@ -59,15 +68,21 @@
             </div>
           </template>
           <template #footer>
-            <div class="flex items-center justify-end">
+            <div class="flex items-center justify-end relative z-5">
               <UButton size="xl" icon="i-lucide-key" color="primary" variant="solid"
                 >View More Keys</UButton
               >
             </div>
+            <div
+              class="absolute -bottom-24 -right-24 w-64 h-64 rounded-full bg-linear-to-br blur-3xl pointer-events-none transition-all duration-700 ease-in-out group-hover:scale-125 group-hover:rotate-12 group-hover:opacity-70 from-blue-500/30 to-purple-500/30"
+            ></div>
+            <div
+              class="absolute -bottom-10 -right-10 w-48 h-48 rounded-full bg-white/5 backdrop-blur-md border border-white/5 pointer-events-none transition-all duration-700 ease-in-out group-hover:scale-110 group-hover:-rotate-12"
+            ></div>
           </template>
         </UCard>
       </div>
-      <div class="basis-1/2">
+      <div class="flex-grow basis-full md:basis-0">
         <UCard variant="subtle" class="rounded-2xl glow-shadow hover-box-shadow">
           <template #header>
             <h5 class="text-2xl text-teal-800 font-semibold dark:text-teal-50">AI Credit</h5>

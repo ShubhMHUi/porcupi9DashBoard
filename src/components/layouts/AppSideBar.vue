@@ -1,7 +1,11 @@
 <template>
   <aside
-    class="aside transition-all duration-300"
-    :class="appStore.isSidebarCollapsed ? 'w-22' : 'w-72'"
+    class="aside transition-all duration-300 fixed lg:static z-20 h-full"
+    :class="[
+      appStore.isSidebarCollapsed
+        ? '-translate-x-full lg:translate-x-0 lg:w-22'
+        : 'translate-x-0 w-72 lg:w-72',
+    ]"
   >
     <div class="flex items-center justify-center mb-8">
       <UButton
@@ -19,7 +23,7 @@
     </div>
     <nav class="flex flex-col justify-center gap-6">
       <div class="sidebar-userlogin flex flex-col items-center gap-3">
-        <picture class="border border-2 border-dashed border-teal-200 rounded-full">
+        <picture class="border-2 border-dashed border-teal-200 rounded-full">
           <img
             :src="userStore.profile.avatar || '../assets/img/avatar.png'"
             alt="User Avatar"
@@ -63,7 +67,9 @@ const router = useRouter()
 
 const navigateTo = (path: string) => {
   router.push(path)
-  if (appStore.isSidebarCollapsed) {
+  if (window.innerWidth < 1024) {
+    appStore.setSidebarCollapsed(true)
+  } else if (appStore.isSidebarCollapsed) {
     appStore.setSidebarCollapsed(false)
   }
 }

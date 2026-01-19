@@ -1,9 +1,18 @@
 <template>
   <header class="header">
     <div class="flex items-center justify-between border-b border-teal-800 pb-4">
-      <picture class="border border-teal-800 rounded-full w-12 h-12">
-        <img src="@/assets/img/light-theme.png" class="w-full h-full" alt="" />
-      </picture>
+      <div class="flex items-center gap-4">
+        <UButton
+          icon="i-lucide-menu"
+          color="white"
+          variant="ghost"
+          class="lg:hidden"
+          @click="appStore.setSidebarCollapsed(false)"
+        />
+        <picture class="border border-teal-800 rounded-full w-12 h-12">
+          <img src="@/assets/img/light-theme.png" class="w-full h-full" alt="" />
+        </picture>
+      </div>
       <div class="flex items-center justify-end gap-4">
         <UTooltip text="Notifications" arrow :delay-duration="0">
           <UButton
@@ -33,7 +42,9 @@
 </template>
 
 <script setup lang="ts">
-// import { ref } from 'vue'
+import { useAppStore } from '@/stores/app'
+
+const appStore = useAppStore()
 </script>
 
 <style scoped></style>
