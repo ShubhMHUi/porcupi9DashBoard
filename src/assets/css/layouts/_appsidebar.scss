@@ -3,20 +3,33 @@
 @use '../base/spacing' as spc;
 
 .aside {
-  background: light-dark(var.color('500'), var.color('800'));
-  color: light-dark(var.color('900'), var.color('100'));
+  background: light-dark(rgba(240, 253, 250, 0.4), rgba(15, 23, 42, 0.55));
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid light-dark(rgba(17, 94, 89, 0.1), rgba(255, 255, 255, 0.1));
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+  color: light-dark(var.color('900'), var.color('50'));
   padding: spc.space('8') spc.space('4');
   border-radius: 3rem;
 
   .active-aside {
-    background: light-dark(var.color('300'), var.color('900'));
+    background: light-dark(rgba(20, 184, 166, 0.15), rgba(45, 212, 191, 0.15));
     color: light-dark(var.color('800'), var.color('100'));
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.125);
+    border: 1px solid light-dark(rgba(20, 184, 166, 0.2), rgba(255, 255, 255, 0.2));
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease-in-out;
+
     &:hover {
-      background: light-dark(var.color('700'), var.color('600'));
-      color: light-dark(var.color('50'), var.color('100'));
-      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.125);
+      background: light-dark(rgba(20, 184, 166, 0.2), rgba(45, 212, 191, 0.2));
+    }
+  }
+
+  .menu-item {
+    color: light-dark(var.color('800'), var.color('100'));
+
+    &:not(.active-aside):hover {
+      background: light-dark(rgba(20, 184, 166, 0.1), rgba(255, 255, 255, 0.05));
+      color: light-dark(var.color('950'), var.color('50'));
     }
   }
 }

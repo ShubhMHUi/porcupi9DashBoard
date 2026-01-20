@@ -42,11 +42,7 @@
         v-for="item in appStore.menuItems"
         :key="item.path"
         class="menu-item flex items-center gap-3 transition-all duration-300 rounded-4xl cursor-pointer p-4 group"
-        :class="[
-          $route.path === item.path
-            ? 'active-aside'
-            : 'hover:bg-teal-400 text-teal-50 hover:text-white',
-        ]"
+        :class="[$route.path === item.path ? 'active-aside' : '']"
         @click="navigateTo(item.path)"
       >
         <UIcon :name="item.icon" class="w-6 h-6 transition-colors duration-300" />

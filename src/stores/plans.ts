@@ -19,7 +19,7 @@ export const usePlansStore = defineStore('plans', () => {
       id: 'basic',
       name: 'Basic',
       price: '0',
-      currency: '$',
+      currency: '₹',
       period: '/month',
       features: [
         '1,000 AI Credits',
@@ -35,8 +35,8 @@ export const usePlansStore = defineStore('plans', () => {
     {
       id: 'pro',
       name: 'Pro',
-      price: '29',
-      currency: '$',
+      price: '499',
+      currency: '₹',
       period: '/month',
       features: [
         '10,000 AI Credits',
@@ -53,8 +53,8 @@ export const usePlansStore = defineStore('plans', () => {
     {
       id: 'plus',
       name: 'Plus',
-      price: '99',
-      currency: '$',
+      price: '999',
+      currency: '₹',
       period: '/month',
       features: [
         'Unlimited AI Credits',
